@@ -1,0 +1,298 @@
+
+.book {
+    transition: opacity 0.4s 0.2s;
+  }
+  p{
+    margin-top: 8vw;
+    text-align: center;
+    font-size: 5vw;
+    color: #000000;
+  }
+  .page {
+    width: 30vw;
+    height: 44vw;
+    background-color: #111111;
+    float: left;
+    margin-bottom: 0.5em;
+    background: left top no-repeat;
+    background-size: cover;
+  }
+  .page:nth-child(even) {
+    clear: both;
+  }
+  .book {
+    perspective: 250vw;
+  }
+  .book .pages {
+    width: 60vw;
+    height: 44vw;
+    position: relative;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    border-radius: 4px;
+    /*box-shadow: 0 0 0 1px #e3dfd8;*/
+  }
+  .book .page {
+    float: none;
+    clear: none;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 30vw;
+    height: 44vw;
+    transform-origin: 0 0;
+    transition: transform 1.4s;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    user-select: none;
+    background-color: #f0f0f0;
+  }
+  .book .page:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.7s;
+    z-index: 2;
+  }
+  .book .page:nth-child(odd) {
+    pointer-events: all;
+    transform: rotateY(0deg);
+    right: 0;
+    border-radius: 0 4px 4px 0;
+    background-image: linear-gradient(to right, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 10%);
+  }
+  .book .page:nth-child(odd):hover {
+    transform: rotateY(-15deg);
+  }
+  .book .page:nth-child(odd):hover:before {
+    background: rgba(0, 0, 0, 0.03);
+  }
+  .book .page:nth-child(odd):before {
+    background: rgba(0, 0, 0, 0);
+  }
+  .book .page:nth-child(even) {
+    pointer-events: none;
+    transform: rotateY(180deg);
+    transform-origin: 100% 0;
+    left: 0;
+    border-radius: 4px 0 0 4px;
+    border-color: black;
+    background-image: linear-gradient(to left, rgba(0,0,0,.12) 0%, rgba(0,0,0,0) 10%);
+  }
+  .book .page:nth-child(even):before {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .book .page.grabbing {
+    transition: none;
+  }
+  .book .page.flipped:nth-child(odd) {
+    pointer-events: none;
+    transform: rotateY(-180deg);
+  }
+  .book .page.flipped:nth-child(odd):before {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .book .page.flipped:nth-child(even) {
+    pointer-events: all;
+    transform: rotateY(0deg);
+  }
+  .book .page.flipped:nth-child(even):hover {
+    transform: rotateY(15deg);
+  }
+  .book .page.flipped:nth-child(even):hover:before {
+    background: rgba(0, 0, 0, 0.03);
+  }
+  .book .page.flipped:nth-child(even):before {
+    background: rgba(0, 0, 0, 0);
+  }
+  *,
+  * :before,
+  *:after {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    font-family: 'Lovers Quarrel', cursive;
+    background: pink;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  html {
+    height: 100%;
+  }
+  body {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+    line-height: 1.5em;
+  }
+  .page:nth-child(odd){
+    background-position: right top;
+  }
+
+
+  /* My styles */
+  .page-1{
+    font-size: 12pt;
+    padding: 10px 20px 50px 20px ;
+    color: #9D0202;
+    line-height: 25px;
+    border-style: groove;
+    border-color: #9D0202;
+    border-width: 20px;
+    height: auto;
+       
+  }
+  .heart{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px;
+      flex-wrap: wrap;
+      line-height: 20px;
+      color: darkolivegreen;
+      font-size: 20px;
+  }
+  
+  /* img{
+      width: 100%;
+      height: auto;
+      padding-top:-10px;
+      margin-top: 10px;
+      margin-bottom: -100px;
+  } */
+
+  /* img { max-width: 100%; height: auto; } */
+
+  .poem{
+      padding: 10px 50px 50px 50px;
+      font-size: 15px;
+      line-height: 30px;
+  }
+
+   /* @keyframes example {
+    0% {border-color: gold;}
+    25% {border-color: indianred;}
+    50% {border-color: bisque;}
+    70% {border-color: black;}
+    80% {border-color: blueviolet;}
+    100% {border-color: coral;}
+  }  */
+
+  @keyframes example2 {
+    0% {color: red;}
+    5% {color: yellow;}
+    10% {color: green;}
+    15% {color: brown;}
+    20% {color: indigo;}
+    25% {color: violet;}
+    30% {color: cyan;}
+    35% {color: orange;}
+    40% {color: olive;}
+    45% {color: orchid;}
+    50% {color: aliceblue;}
+    60% {color: aquamarine;}
+    65% {color: burlywood;}
+    70% {color: cadetblue;}
+    75% {color: chartreuse;}
+    80% {color: chocolate;}
+    85% {color: coral;}
+    90% {color: cornflowerblue;}
+    95% {color: darkgrey;}
+    100% {color: fuchsia;}
+  }
+
+  .fa-heart{
+      color:red;
+       animation-name: example2;
+      animation-duration: 1s;
+      animation-delay: 1s;
+      animation-iteration-count:infinite;
+  }
+ 
+
+  .poem1{
+      border-style: double;
+      border-color: red;
+      border-width: 20px;
+      padding: 15px;
+      color: red; 
+      
+  }
+  .poem2{
+    border-style: solid;
+    border-color: purple;
+    padding: 15px;
+    color:purple
+  }
+  .poem3{
+    border-style: dashed;
+    border-color: green;
+    padding: 15px;
+    color:green;
+  }
+  .poem4{
+    border-style: dotted;
+    border-color: orange;
+    padding: 15px;
+    color:orange;
+  }
+  .poem5{
+    border-style: solid;
+    border-color: brown;
+    padding: 15px;
+    color:brown;
+  }
+  .poem6{
+    border-style: ridge;
+    border-color: goldenrod;
+    padding: 15px;
+    color:goldenrod;
+  }
+  .poem7{
+    border-style: groove;
+    border-color: blueviolet;
+    padding: 15px;
+    color:blueviolet;
+  }
+  .poem8{
+    border-style: ridge;
+    border-color: violet;
+    padding: 15px;
+    color:violet;
+  }
+  .poem9{
+    border-style: dashed;
+    border-color: darkcyan;
+    padding: 15px;
+    color:darkcyan;
+  }
+  .poem10{
+    border-style: double;
+    border-color: darksalmon;
+    padding: 15px;
+    color:darksalmon;
+  } 
+  /* .container {  
+    display: grid;  
+    grid-template-columns: 1fr;
+    grid-template-rows:2fr ;  
+} */
+
+/* Media Queries: Tablet Landscape */
+@media screen and (max-width: 1060px) {
+  .container { width:67%; }
+  #secondary { width:30%; margin-left:3%;}  
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+  .container { width:100%; }
+  #secondary { width:100%; margin:0; border:none; }
+}
